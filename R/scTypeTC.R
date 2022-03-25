@@ -55,13 +55,14 @@ scTypeTC <- function(test_data = test_data,cutoff= 0.5,sam.name="test"){
   
   
   print("make plots")
-  pdf(paste0(sam.name,"_summary_barplot.pdf"), width = 5, height = 5)
-  par(mfrow=c(1, 1), mar=c(5, 5, 4, 8))
+  pdf(paste0(sam.name,"_summary_barplot.pdf"), width = 4, height = 4)
+  par(mfrow=c(1, 1), mar=c(3, 5, 4, 8))
   barplot(smry2,                     
           col = c("darkgreen","blue","gold2","brown"),
+          ylab = "subtype percentages (%)",
           legend.text = TRUE, 
           args.legend=list(
-            x=ncol(smry2) + 0.7,
+            x=ncol(smry2) + 0.9,
             y=max(colSums(smry2)),
             bty = "n"))
   dev.off()
@@ -92,10 +93,10 @@ scTypeTC <- function(test_data = test_data,cutoff= 0.5,sam.name="test"){
     points(1:10, rep(2,10), cex=4,lwd=2)
     points(1:10, rep(1,10), pch=16, cex=4, col=colo[91:100])
     points(1:10, rep(1,10), cex=4,lwd=2)
-    
-    legend("bottomright", c("ATC2","ATC1","PTC1","Normal"),
+    title(main = "subtype percentages (%)",cex.main= 1.5)
+    legend("right", c("mATC","iATC","PTC","TFC"),
            col = c("brown","gold2","blue","darkgreen"), pch=16,
-           xpd=TRUE, inset=c(0,0.9), cex=1, bty='n')
+           xpd=TRUE, inset=c(-0.14,1), cex=1, bty='n')
   dev.off()
   
   return(results)

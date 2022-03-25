@@ -21,3 +21,6 @@ scTypeTC(test_data = test_data, cutoff = 0.5, sam.name = "test")
 Predict subtype of single thyroid epithelial cell using multinomial-lasso model following the best vote principles.
 Cell with low chance of consistent prediction is labeled as undefined.
 }
+\examples{
+scTypeTC.test <- scTypeTC(test_data = test_data, cutoff = 0.5, sam.name = "test")
+}

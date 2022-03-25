@@ -8,6 +8,9 @@
 #' @param probe_subset a set of genes as predictor in the model, automatically loaded in scTypeTC.
 #' @param fit the prediction model, automatically loaded in scTypeTC.
 #' @param sam.name sample name.
+#' 
+#' @examples
+#' scTypeTC.test <- scTypeTC(test_data = test_data, cutoff = 0.5, sam.name = "test")
 #' @export
 
 scTypeTC <- function(test_data = test_data,cutoff= 0.5,sam.name="test"){

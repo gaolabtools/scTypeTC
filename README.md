@@ -6,6 +6,7 @@ The deadliest anaplastic thyroid cancer (ATC) often transforms from indolent dif
 Installing scTypeTC from GitHub
 ```{r setup}
 library(glmnet)
+library(caret)
 library(devtools)
 install_github("gaolabtools/scTypeTC")
 ```

@@ -1,5 +1,5 @@
 ---
-title: "scTypeTC: predict the subtype of thyroid epithelial cell and tumor cell into thyroid follicular cell, PTC, iATC and mATC"
+title: "scTypeTC: single cell sub-typing of epithelial cells in thyroid cancer with glmnet-lasso model"
 author: "Author: Lina Lu <lina.lu@northwestern.edu>"
 date: "First version: March 18, 2022"
 
@@ -44,7 +44,7 @@ Now I runn the code:
 
 ```{r, message=FALSE}
 library(scTypeTC)
-scTypeTC.test <- scTypeTC(test_data = test_data,cutoff= 0.5,sam.name="test")
+scTypeTC.test <- scTypeTC(test_data = test_data,cutoff_chance= 0.5,sam.name="test")
 ```
 
 After this step, scTypeTC aumatically save the prediction results, the bar plot and dot plot in my working directory.  I can also extract the prediction result from scTypeTC.test object.
@@ -59,4 +59,4 @@ head(scTypeTC.test)
      
 ```
 The first 4 columns in the prediction results matrix are the chance to be predicted as TFC, PTC, iATC or mATC. The last column is the final predicted subtype with the confident cutoff. Please note that cells predicted as undefined are in the results. The Rows are cells.
-scTypeTC also generate a bar plot and a dot plot for the final predicted results, excluding the undefined cells.
+scTypeTC also report a matrix including the prediction powers of predictors.

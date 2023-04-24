@@ -1,17 +1,15 @@
 Package: scTypeTC
-Title: scTypeTC: predict the subtype of thyroid epithelial cell and tumor cell into thyroid follicular cell, PTC, iATC and mATC
+Type: Package
+Title: single cell sub-typing of epithelial cells in thyroid cancer with glmnet-lasso model
 Version: 0.1.0
-Authors@R: 
-    person("Lina", "Lu", , "lina.lu@northwestern.edu", role = c("aut", "cre"))
+Author: Lina Lu
+Maintainer: The package maintainer <yourself@somewhere.net>
 Description: scTypeTC is a computational tool using multinomial-lasso model to predict subtype of thyroid epithelial cell in single cell following the best vote principles using sc-RNAseq data.
-License: GPL-2
+License: GPL-3
 Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
-Imports:
-    glmnet
 LazyData: true
-Suggests: 
-    rmarkdown,
-    knitr
-VignetteBuilder: knitr
+RoxygenNote: 7.2.3
+Imports:
+        glmnet,caret
+Depends: R (>= 3.5.0)
+

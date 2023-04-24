@@ -2,25 +2,18 @@
 % Please edit documentation in R/scTypeTC.R
 \name{scTypeTC}
 \alias{scTypeTC}
-\title{predict the subtype of thyroid epithelial cell and tumor cell into thyroid follicular cell, PTC, iATC and mATC.}
+\title{single cell sub-typing of epithelial cells in thyroid cancer with glmnet-lasso model}
 \usage{
-scTypeTC(test_data = test_data, cutoff = 0.5, sam.name = "test")
+scTypeTC(test_data = test_data, cutoff_chance = 0.5, sam.name = "test")
 }
 \arguments{
 \item{test_data}{normalized gene expression data matrix from Seurat; genes in rows; cell names in columns.}
 
-\item{cutoff}{cutoff on the chance of consistent predictions to report the prediction results, cell below the cutoff is predicted as undefined,default=0.5}
+\item{cutoff_chance}{cutoff on the chance of consistent predictions to report the prediction results, cell below the cutoff is predicted as undefined,default=0.5}
 
 \item{sam.name}{sample name.}
-
-\item{probe_subset}{a set of genes as predictor in the model, automatically loaded in scTypeTC.}
-
-\item{fit}{the prediction model, automatically loaded in scTypeTC.}
 }
 \description{
 Predict subtype of single thyroid epithelial cell using multinomial-lasso model following the best vote principles.
 Cell with low chance of consistent prediction is labeled as undefined.
-}
-\examples{
-scTypeTC.test <- scTypeTC(test_data = test_data, cutoff = 0.5, sam.name = "test")
 }
